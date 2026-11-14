@@ -1,0 +1,23 @@
+{
+  "name": "ptolemee-functions",
+  "private": true,
+  "description": "GOC — Division PTOLÉMÉE : Cloud Functions (moteur partagé + Cloud SQL PostgreSQL)",
+  "main": "index.js",
+  "engines": {
+    "node": "22"
+  },
+  "scripts": {
+    "engine": "node scripts/copy-engine.js",
+    "test": "node scripts/copy-engine.js && node test/engine.test.js && node test/client.test.js",
+    "test:sql": "node scripts/copy-engine.js && node test/sql.test.js",
+    "serve": "node scripts/copy-engine.js && firebase emulators:start --only functions,hosting",
+    "deploy": "firebase deploy --only functions,hosting",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "@google-cloud/cloud-sql-connector": "^1.4.0",
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^6.1.0",
+    "pg": "^8.13.0"
+  }
+}
