@@ -9,7 +9,7 @@
    ========================================================================== */
 
 window.GOC_FIREBASE = {
-    apiKey: 'AIzaSyBs3EV5X_5D-WlFILaZKiaJRCGi7S0F-9o',
+    apiKey: '###############',
     authDomain: 'ptomelee-f8568.firebaseapp.com',
     projectId: 'ptomelee-f8568',
     appId: '1:911924897482:web:85329ca9af25df4d71b633',
