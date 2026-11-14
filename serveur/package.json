@@ -1,0 +1,20 @@
+{
+  "name": "ptolemee-functions",
+  "private": true,
+  "description": "GOC — Division PTOLÉMÉE : Cloud Functions (moteur partagé + Firestore)",
+  "main": "index.js",
+  "engines": {
+    "node": "22"
+  },
+  "scripts": {
+    "engine": "node scripts/copy-engine.js",
+    "test": "node scripts/copy-engine.js && node test/engine.test.js && node test/client.test.js && node test/store.test.js",
+    "serve": "node scripts/copy-engine.js && firebase emulators:start --only functions,firestore",
+    "deploy": "firebase deploy --only functions,firestore",
+    "logs": "firebase functions:log"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.7.0",
+    "firebase-functions": "^6.1.0"
+  }
+}

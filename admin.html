@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Console de commandement de la Division PTOLÉMÉE.">
+	<title>Commandement · PTOLÉMÉE</title>
+	<link rel="icon" href="assets/ptolemee-bleu.png">
+	<link rel="stylesheet" href="style.css">
+	<script>(function(){try{var t=localStorage.getItem('pref::theme');if(t==='sombre'||t==='clair')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+	<header class="site-header" data-header></header>
+
+	<main>
+		<div class="wrap page-head">
+			<span class="eyebrow">Commandement</span>
+			<h1>Console</h1>
+			<p>Validation des affectations, gestion du personnel et attribution des points.</p>
+		</div>
+
+		<div class="wrap">
+			<div class="lab-bar" data-bar></div>
+
+			<div class="tabs" id="admin-tabs">
+				<button type="button" data-tab="arbre" data-min="admin">Éditeur d'arbre</button>
+				<button type="button" data-tab="demandes" data-min="gradé">Demandes <span class="badge" id="tab-count-demandes">0</span></button>
+				<button type="button" data-tab="membres" data-min="gradé">Personnel</button>
+				<button type="button" data-tab="points" data-min="gradé">Points</button>
+				<button type="button" data-tab="evenements" data-min="admin">Événements &amp; annonces</button>
+				<button type="button" data-tab="recherches" data-min="admin">Catalogue</button>
+				<button type="button" data-tab="paliers" data-min="admin">Paliers</button>
+				<button type="button" data-tab="journal" data-min="gradé">Journal</button>
+				<button type="button" data-tab="maintenance" data-min="admin">Maintenance</button>
+			</div>
+
+			<section class="tab-panel" data-panel="arbre" hidden>
+				<div class="editor-bar">
+					<button class="btn" type="button" id="ed-new-research">＋ Recherche</button>
+					<button class="btn btn-ghost" type="button" id="ed-new-tier">＋ Palier</button>
+					<button class="btn btn-ghost" type="button" id="ed-fit">Ajuster la vue</button>
+					<span class="dim">Double-clic : créer · glisser : déplacer · tirer depuis ● : lier · bords d'un palier : redimensionner</span>
+				</div>
+				<div class="tree-layout">
+					<div class="graph-host" id="editor-graph"></div>
+					<aside class="detail" id="editor-inspector"></aside>
+				</div>
+			</section>
+
+			<section class="tab-panel" data-panel="demandes" hidden>
+				<h2>Demandes d'affectation</h2>
+				<p class="intro">Vérifiez la correspondance Discord avant de valider. Le rôle et l'équipe
+					peuvent être ajustés au moment de la validation.</p>
+				<div id="pane-demandes"></div>
+			</section>
+
+			<section class="tab-panel" data-panel="membres" hidden>
+				<h2>Personnel</h2>
+				<p class="intro">Rôles, équipes, réserves de points et statut des comptes.</p>
+				<div class="table-wrap" id="pane-membres"></div>
+			</section>
+
+			<section class="tab-panel" data-panel="points" hidden>
+				<h2>Attribution de points de recherche</h2>
+				<p class="intro">Les PR sont la ressource que les chercheurs versent dans les recherches.
+					Un montant négatif retire des points.</p>
+				<div class="panel" style="max-width:620px">
+					<div class="field">
+						<label for="gp-target">Destinataire</label>
+						<select id="gp-target"></select>
+					</div>
+					<div class="form-row">
+						<div class="field">
+							<label for="gp-amount">Montant (PR)</label>
+							<input type="number" id="gp-amount" value="1000" step="100">
+						</div>
+						<div class="field">
+							<label for="gp-reason">Motif</label>
+							<input type="text" id="gp-reason" placeholder="Prime de fin de mission">
+						</div>
+					</div>
+					<button class="btn" type="button" id="gp-send">Attribuer</button>
+				</div>
+
+				<h3 style="margin-top:2.5rem">Réserves actuelles</h3>
+				<div class="table-wrap" id="pane-points" style="margin-top:1rem"></div>
+			</section>
+
+			<section class="tab-panel" data-panel="evenements" hidden>
+				<h2>Événements</h2>
+				<p class="intro">Modificateurs temporaires appliqués à toute la division. Positif : durées
+					ou coûts en baisse, rendement en hausse. Négatif : l'inverse.</p>
+				<div class="editor-bar">
+					<button class="btn btn-ok" type="button" id="new-event-pos">▲ Événement positif</button>
+					<button class="btn btn-danger" type="button" id="new-event-neg">▼ Événement négatif</button>
+				</div>
+				<div class="grid grid-2" id="pane-evenements"></div>
+
+				<h2 style="margin-top:3rem">Annonces</h2>
+				<p class="intro">Messages affichés en tête de l'accueil, des découvertes, du laboratoire et
+					des archives.</p>
+				<div class="editor-bar">
+					<button class="btn" type="button" id="new-announce">＋ Nouvelle annonce</button>
+				</div>
+				<div class="grid grid-2" id="pane-annonces"></div>
+			</section>
+
+			<section class="tab-panel" data-panel="recherches" hidden>
+				<h2>Catalogue des recherches</h2>
+				<p class="intro">Vue tableau de l'arbre. Le placement et les liens se font plus facilement
+					dans l'éditeur.</p>
+				<div class="editor-bar">
+					<button class="btn" type="button" id="new-research">＋ Nouvelle recherche</button>
+					<select id="adm-filter-tier" style="max-width:280px"></select>
+					<label class="check" style="margin:0">
+						<input type="checkbox" id="adm-repeat-scaling">
+						<span>Progression des recherches répétables (durée, coût, vitesse)</span>
+					</label>
+					<label class="check" style="margin:0">
+						<input type="checkbox" id="adm-debuffs">
+						<span>Malus d'abandon</span>
+					</label>
+				</div>
+				<div class="table-wrap" id="pane-recherches"></div>
+			</section>
+
+			<section class="tab-panel" data-panel="paliers" hidden>
+				<h2>Paliers</h2>
+				<p class="intro">Chaque palier est une colonne de l'arbre, dans l'ordre indiqué.</p>
+				<div class="editor-bar">
+					<button class="btn" type="button" id="new-tier">＋ Nouveau palier</button>
+				</div>
+				<div class="table-wrap" id="pane-paliers"></div>
+			</section>
+
+			<section class="tab-panel" data-panel="journal" hidden>
+				<h2>Journal d'activité</h2>
+				<p class="intro">400 dernières entrées.</p>
+				<div class="table-wrap" id="pane-journal"></div>
+			</section>
+
+			<section class="tab-panel" data-panel="maintenance" hidden>
+				<h2>Maintenance</h2>
+				<p class="intro">Sauvegarde, restauration et réinitialisation de la base locale.</p>
+
+				<div class="grid grid-2">
+					<div class="panel">
+						<h3>Exporter</h3>
+						<p>Copie complète de la base au format JSON.</p>
+						<p style="margin-top:1rem">
+							<button class="btn btn-ghost btn-sm" type="button" id="mt-export">Afficher le JSON</button>
+						</p>
+					</div>
+					<div class="panel">
+						<h3>Importer</h3>
+						<p>Remplace intégralement la base actuelle par le JSON collé ci-dessous.</p>
+						<textarea id="mt-import" placeholder='{"version":2,…}' style="margin-top:.8rem"></textarea>
+						<p style="margin-top:.8rem">
+							<button class="btn btn-ghost btn-sm" type="button" id="mt-import-go">Restaurer</button>
+						</p>
+					</div>
+					<div class="panel">
+						<h3>Réinitialiser</h3>
+						<p>Efface tout et régénère les données d'origine.</p>
+						<p style="margin-top:1rem">
+							<button class="btn btn-danger btn-sm" type="button" id="mt-reset">Réinitialiser la base</button>
+						</p>
+					</div>
+					<div class="panel">
+						<h3>État du stockage</h3>
+						<p id="mt-state" class="mono" style="font-size:.8rem"></p>
+					</div>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<footer class="site-footer" data-footer></footer>
+
+	<script src="js/firebase-config.js"></script>
+	<script src="js/core.js"></script>
+	<script src="js/icons.js"></script>
+	<script src="js/research.js"></script>
+	<script src="js/graph.js"></script>
+	<script src="js/ops.js"></script>
+	<script src="js/remote.js"></script>
+	<script>
+		GOC.ready(function () {
+			if (!GOC.Auth.require('gradé')) {
+				document.getElementById('admin-tabs').remove();
+			}
+			GOC.UI.boot();
+		});
+	</script>
+	<script src="js/page-admin.js"></script>
+</body>
+</html>

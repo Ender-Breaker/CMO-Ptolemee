@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Demande d'affectation à la Division PTOLÉMÉE — validation par un haut gradé requise.">
+	<title>Demander une affectation · PTOLÉMÉE</title>
+	<link rel="icon" href="assets/ptolemee-bleu.png">
+	<link rel="stylesheet" href="style.css">
+	<script>(function(){try{var t=localStorage.getItem('pref::theme');if(t==='sombre'||t==='clair')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+	<header class="site-header" data-header></header>
+
+	<main>
+		<div class="wrap page-head">
+			<span class="eyebrow">Formulaire D-17</span>
+			<h1>Demande d'affectation</h1>
+			<p>Toute demande est examinée manuellement par un haut gradé. Vous ne pourrez pas vous
+				connecter tant qu'elle n'aura pas été validée.</p>
+		</div>
+
+		<div class="wrap">
+			<form class="form-card" id="signup-form" novalidate>
+				<div id="signup-alert"></div>
+
+				<h2 style="margin-bottom:1.2rem">Identité de service</h2>
+
+				<div class="field">
+					<label for="su-rp">Nom RP (nom de service)</label>
+					<input type="text" id="su-rp" name="rpName" maxlength="60" autocomplete="off"
+						placeholder="Sgt. Elias Varn">
+					<span class="hint">Le nom sous lequel vous apparaîtrez dans les journaux de la division.</span>
+				</div>
+
+				<div class="form-row">
+					<div class="field">
+						<label for="su-user">Identifiant de service</label>
+						<input type="text" id="su-user" name="username" maxlength="24" autocomplete="username"
+							placeholder="e.varn">
+					</div>
+					<div class="field" data-local-only>
+						<label for="su-pwd">Mot de passe</label>
+						<input type="password" id="su-pwd" name="password" autocomplete="new-password">
+					</div>
+				</div>
+
+				<div class="field" data-local-only>
+					<label for="su-pwd2">Confirmation du mot de passe</label>
+					<input type="password" id="su-pwd2" name="password2" autocomplete="new-password">
+					<span class="hint">8 caractères minimum. Ne réutilisez pas un mot de passe important.</span>
+				</div>
+
+				<h2 style="margin:2rem 0 1rem">Équipe</h2>
+
+				<label class="team-choice">
+					<input type="radio" name="team" value="qm">
+					<span><strong>📦 Quartier-maître</strong>
+						<small>Fournit le matériel : armes, munitions, vivres, équipement. Gère les dépôts et
+							le transport des équipes.</small></span>
+				</label>
+				<label class="team-choice">
+					<input type="radio" name="team" value="rd">
+					<span><strong>⚙️ Recherche &amp; Développement</strong>
+						<small>Crée de nouvelles technologies : prototypes, blindages, instruments,
+							systèmes d'armes.</small></span>
+				</label>
+
+				<h2 style="margin:2rem 0 .5rem">Comptes liés</h2>
+				<p class="dim" style="margin-bottom:1rem" data-local-only>La liaison Discord et Google est obligatoire :
+					elle sert à vous joindre et à garantir l'unicité des comptes.</p>
+				<p class="dim" style="margin-bottom:1rem" data-remote-only>Votre compte Google sert à vous
+					connecter : un compte Google = un dossier. Le pseudo Discord est déclaratif, un haut
+					gradé vérifie votre présence sur le serveur du projet avant validation.</p>
+
+				<div class="link-box discord" id="box-discord">
+					<span class="icon">🎮</span>
+					<span class="meta">
+						<strong>Discord</strong>
+						<span data-value>Aucun compte lié</span>
+					</span>
+					<button class="btn btn-ghost btn-sm" type="button" data-link="discord">Lier</button>
+				</div>
+
+				<div class="link-box google" id="box-google">
+					<span class="icon">🔑</span>
+					<span class="meta">
+						<strong>Google</strong>
+						<span data-value>Aucun compte lié</span>
+					</span>
+					<button class="btn btn-ghost btn-sm" type="button" data-link="google">Lier</button>
+				</div>
+
+				<input type="hidden" id="su-discord" name="discord">
+				<input type="hidden" id="su-google" name="google">
+
+				<div class="field" style="margin-top:1.5rem">
+					<label for="su-motiv">Motivation (facultatif)</label>
+					<textarea id="su-motiv" name="motivation" maxlength="500"
+						placeholder="Spécialité, expérience, parrain éventuel au sein de la division…"></textarea>
+				</div>
+
+				<h2 style="margin:2rem 0 1rem">Engagements</h2>
+
+				<label class="check">
+					<input type="checkbox" id="su-terms">
+					<span>J'ai lu et j'accepte les <a href="conditions.html" target="_blank">conditions
+						d'utilisation</a> et la <a href="conditions.html#cookies" target="_blank">politique
+						de cookies</a>.</span>
+				</label>
+				<label class="check">
+					<input type="checkbox" id="su-age">
+					<span>J'ai 13 ans ou plus et je comprends qu'il s'agit d'un univers de fiction.</span>
+				</label>
+				<label class="check">
+					<input type="checkbox" id="su-data">
+					<span>J'accepte que mon nom RP, mon identifiant Discord et mon adresse Google soient
+						consultables par les hauts gradés pour le traitement de ma demande.</span>
+				</label>
+
+				<button class="btn btn-block" type="submit" style="margin-top:1.2rem">Déposer la demande</button>
+
+				<p class="dim" style="margin-top:1rem; text-align:center">
+					Déjà affecté&nbsp;? <a href="connexion.html">Se connecter</a>
+				</p>
+			</form>
+		</div>
+	</main>
+
+	<footer class="site-footer" data-footer></footer>
+
+	<script src="js/firebase-config.js"></script>
+	<script src="js/core.js"></script>
+	<script src="js/icons.js"></script>
+	<script src="js/ops.js"></script>
+	<script src="js/remote.js"></script>
+	<script src="js/page-auth.js"></script>
+</body>
+</html>

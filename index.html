@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Portail de la Division PTOLÉMÉE — branche de soutien de la Global Occult Coalition. Univers de jeu de rôle.">
+	<title>GOC · Division PTOLÉMÉE</title>
+	<link rel="icon" href="assets/ptolemee-bleu.png">
+	<link rel="stylesheet" href="style.css">
+	<script>(function(){try{var t=localStorage.getItem('pref::theme');if(t==='sombre'||t==='clair')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+	<header class="site-header" data-header></header>
+
+	<main>
+		<section class="hero">
+			<div class="wrap">
+				<div class="hero-grid">
+					<div>
+						<span class="stamp">Global Occult Coalition · Diffusion interne</span>
+						<h1>Division<br><em>PTOLÉMÉE</em></h1>
+						<p class="lead">
+							La branche de soutien de la Coalition. Nous équipons, ravitaillons et projetons
+							les équipes d'intervention — et nous concevons la technologie dont elles auront
+							besoin demain.
+						</p>
+						<div class="hero-actions">
+							<a class="btn" href="decouvertes.html">Consulter les découvertes</a>
+							<a class="btn btn-ghost" href="ptolemee.html">Découvrir la division</a>
+							<a class="btn btn-ghost" href="inscription.html">Demander une affectation</a>
+						</div>
+					</div>
+					<div class="hero-seal" aria-hidden="true">
+						<img src="assets/sceau-cmo.png" alt="">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="wrap" style="padding-top:2.5rem">
+			<div data-announcements></div>
+		</section>
+
+		<section class="section wrap">
+			<div class="grid grid-3">
+				<div class="panel kpi"><span class="eyebrow">Programme</span><h3 id="st-done">—</h3><p>recherches achevées</p></div>
+				<div class="panel kpi"><span class="eyebrow">En cours</span><h3 id="st-run">—</h3><p>travaux actifs dans les ateliers</p></div>
+				<div class="panel kpi"><span class="eyebrow">Effort collectif</span><h3 id="st-pool">—</h3><p>points de recherche investis</p></div>
+			</div>
+		</section>
+
+		<section class="section wrap">
+			<h2>Deux équipes</h2>
+			<p class="intro">Chaque membre de la division est affecté à l'une des deux équipes au moment de
+				son inscription.</p>
+			<div class="grid grid-2">
+				<article class="panel">
+					<span class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5v-9Z"></path><path d="m3 7.5 9 4.5 9-4.5M12 12v9"></path></svg> Logistique</span>
+					<h3>Quartier-maître</h3>
+					<p>Fournit le matériel : armes, munitions, vivres, équipement de protection. Tient les
+						dépôts, organise les convois et achemine les équipes PHYSICS jusqu'aux zones
+						assignées.</p>
+				</article>
+				<article class="panel">
+					<span class="eyebrow"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 2.8v2.6M12 18.6v2.6M4.5 12H7m10 0h2.5M6.7 6.7l1.8 1.8m7 7 1.8 1.8m0-10.6-1.8 1.8m-7 7-1.8 1.8"></path></svg> Technologie</span>
+					<h3>Recherche &amp; Développement</h3>
+					<p>Crée de nouvelles technologies. Prototypes, blindages, instruments de détection,
+						systèmes d'armes : tout ce qui donne à la Coalition une longueur d'avance sur
+						l'anormal.</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="section wrap">
+			<h2>Accès au portail</h2>
+			<p class="intro">Les habilitations sont accordées manuellement par les hauts gradés.</p>
+
+			<div class="grid grid-3">
+				<article class="panel">
+					<span class="badge">Invité</span>
+					<h3 style="margin-top:.7rem">Découvertes</h3>
+					<p>Les recherches achevées et leurs rapports. Aucun compte nécessaire.</p>
+					<p style="margin-top:1rem"><a class="btn btn-ghost btn-sm" href="decouvertes.html">Ouvrir</a></p>
+				</article>
+				<article class="panel">
+					<span class="badge badge-run">Chercheur</span>
+					<h3 style="margin-top:.7rem">Laboratoire</h3>
+					<p>L'arbre de recherche opérationnel : verser ses points, lancer les travaux,
+						suivre les prérequis.</p>
+					<p style="margin-top:1rem"><a class="btn btn-ghost btn-sm" href="laboratoire.html">Ouvrir</a></p>
+				</article>
+				<article class="panel">
+					<span class="badge badge-main">Membre GOC</span>
+					<h3 style="margin-top:.7rem">Archives</h3>
+					<p>L'intégralité des dossiers de la division.</p>
+					<p style="margin-top:1rem"><a class="btn btn-ghost btn-sm" href="recherches.html">Ouvrir</a></p>
+				</article>
+			</div>
+		</section>
+
+		<section class="section wrap">
+			<div class="panel note-block">
+				<span class="eyebrow">Fonctionnement</span>
+				<h2>Les points de recherche</h2>
+				<p>Chaque recherche exige un volume important de <b>points de recherche (PR)</b> avant de
+					pouvoir être lancée, puis des heures, voire des jours de travaux. Aucun chercheur ne peut financer
+					seul une recherche&nbsp;: <b>la cagnotte est commune</b>, et chaque versement rapproche
+					toute la division du but. Le commandement peut à tout moment accorder des crédits
+					exceptionnels… ou imposer des restrictions.</p>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer" data-footer></footer>
+
+	<script src="js/firebase-config.js"></script>
+	<script src="js/core.js"></script>
+	<script src="js/icons.js"></script>
+	<script src="js/research.js"></script>
+	<script src="js/ops.js"></script>
+	<script src="js/remote.js"></script>
+	<script>
+		GOC.ready(function () {
+			GOC.UI.boot();
+			GOC.Research.tick();
+			function stats() {
+				var s = GOC.Research.stats();
+				document.getElementById('st-done').textContent = s.done + ' / ' + s.total;
+				document.getElementById('st-run').textContent = s.running;
+				document.getElementById('st-pool').textContent = GOC.UI.number(s.pool) + ' PR';
+			}
+			stats();
+			if (GOC.Remote) GOC.Remote.onSync(stats);
+		});
+	</script>
+</body>
+</html>

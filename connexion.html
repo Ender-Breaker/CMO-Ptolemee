@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Connexion au portail PTOLÉMÉE.">
+	<title>Connexion · PTOLÉMÉE</title>
+	<link rel="icon" href="assets/ptolemee-bleu.png">
+	<link rel="stylesheet" href="style.css">
+	<script>(function(){try{var t=localStorage.getItem('pref::theme');if(t==='sombre'||t==='clair')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+	<header class="site-header" data-header></header>
+
+	<main>
+		<div class="wrap page-head">
+			<span class="eyebrow">Contrôle d'accès</span>
+			<h1>Connexion</h1>
+			<p>Authentifiez-vous pour accéder au laboratoire. Les tentatives sont journalisées.</p>
+		</div>
+
+		<div class="wrap">
+			<form class="form-card" id="login-form" novalidate>
+				<div id="login-alert"></div>
+
+				<div data-local-only>
+					<div class="field">
+						<label for="li-user">Identifiant</label>
+						<input type="text" id="li-user" autocomplete="username" autofocus>
+					</div>
+
+					<div class="field">
+						<label for="li-pwd">Mot de passe</label>
+						<input type="password" id="li-pwd" autocomplete="current-password">
+					</div>
+				</div>
+
+				<p class="muted" data-remote-only style="margin-bottom:1.2rem">La connexion se fait avec
+					le compte Google indiqué lors de votre demande d'affectation. Aucun mot de passe
+					n'est conservé par le portail.</p>
+
+				<label class="check">
+					<input type="checkbox" id="li-remember" checked>
+					<span>Rester connecté <span class="dim">(nécessite l'acceptation du cookie
+						de connexion enregistrée)</span></span>
+				</label>
+
+				<button class="btn btn-block" type="submit" data-local-only>Se connecter</button>
+				<div data-remote-only>
+					<button class="btn btn-block btn-google" type="button" id="li-google">
+						<span class="g" aria-hidden="true">G</span> Se connecter avec Google</button>
+				</div>
+
+				<p class="dim" style="margin-top:1rem; text-align:center">
+					Pas encore habilité&nbsp;? <a href="inscription.html">Déposer une demande</a>
+				</p>
+			</form>
+		</div>
+	</main>
+
+	<footer class="site-footer" data-footer></footer>
+
+	<script src="js/firebase-config.js"></script>
+	<script src="js/core.js"></script>
+	<script src="js/icons.js"></script>
+	<script src="js/ops.js"></script>
+	<script src="js/remote.js"></script>
+	<script src="js/page-auth.js"></script>
+</body>
+</html>

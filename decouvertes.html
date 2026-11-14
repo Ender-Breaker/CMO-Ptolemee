@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Découvertes publiées de la Division PTOLÉMÉE — recherches achevées.">
+	<title>Découvertes · PTOLÉMÉE</title>
+	<link rel="icon" href="assets/ptolemee-bleu.png">
+	<link rel="stylesheet" href="style.css">
+	<script>(function(){try{var t=localStorage.getItem('pref::theme');if(t==='sombre'||t==='clair')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+	<header class="site-header" data-header></header>
+
+	<main>
+		<div class="wrap page-head">
+			<span class="eyebrow">Registre public</span>
+			<h1>Découvertes publiées</h1>
+			<p>Les recherches achevées par la division et leurs rapports. Les travaux en cours ne
+				figurent pas sur ce registre.</p>
+		</div>
+
+		<div class="wrap">
+			<div data-announcements></div>
+			<div class="lab-bar" data-bar></div>
+			<div data-events></div>
+
+			<div data-tree="public"></div>
+
+			<div class="panel" style="margin-top:2rem; border-left:3px solid var(--azure)">
+				<h3>Vous voulez faire avancer l'arbre&nbsp;?</h3>
+				<p>Les recherches n'avancent que si la division y consacre ses points. Demandez une
+					affectation&nbsp;: une fois validée par un haut gradé, vous pourrez financer et lancer
+					des travaux.</p>
+				<p style="margin-top:1rem"><a class="btn btn-sm" href="inscription.html">Demander une affectation</a></p>
+			</div>
+		</div>
+	</main>
+
+	<footer class="site-footer" data-footer></footer>
+
+	<script src="js/firebase-config.js"></script>
+	<script src="js/core.js"></script>
+	<script src="js/icons.js"></script>
+	<script src="js/research.js"></script>
+	<script src="js/graph.js"></script>
+	<script src="js/ops.js"></script>
+	<script src="js/remote.js"></script>
+	<script>GOC.ready(function () { GOC.UI.boot(); });</script>
+	<script src="js/page-tree.js"></script>
+</body>
+</html>

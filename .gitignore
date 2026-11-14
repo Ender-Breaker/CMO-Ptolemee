@@ -1,0 +1,8 @@
+node_modules/
+serveur/engine/
+serveur/.env.local
+serveur/.secret.local
+.firebase/
+*.log
+dist/
+serveur/.env.*

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Conditions d'utilisation et politique de cookies du portail PTOLÉMÉE.">
+	<title>Conditions d'utilisation · PTOLÉMÉE</title>
+	<link rel="icon" href="assets/ptolemee-bleu.png">
+	<link rel="stylesheet" href="style.css">
+	<script>(function(){try{var t=localStorage.getItem('pref::theme');if(t==='sombre'||t==='clair')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+	<header class="site-header" data-header></header>
+
+	<main>
+		<div class="wrap page-head">
+			<span class="eyebrow">Mentions légales</span>
+			<h1>Conditions d'utilisation</h1>
+			<p>Dernière mise à jour&nbsp;: <span id="cgu-date">—</span>. En créant un compte ou en
+				utilisant ce site, vous acceptez les règles ci-dessous.</p>
+		</div>
+
+		<div class="wrap doc">
+			<div class="alert alert-info">
+				<b>Ce site est une œuvre de fiction.</b> Il sert de support à un jeu de rôle amateur
+				inspiré de l'univers de la Fondation SCP et de la Global Occult Coalition. Aucune des
+				organisations, procédures ou découvertes décrites n'existe. Aucun contenu de ce site ne
+				constitue une information réelle.
+			</div>
+
+			<h2 id="objet">1. Objet du service</h2>
+			<p>Le portail PTOLÉMÉE met à disposition de ses membres un outil de suivi d'un arbre de
+				recherche fictif : consultation des découvertes, financement collectif de recherches en
+				points de recherche (PR), publication de rapports d'univers.</p>
+			<p>Le service est fourni gratuitement, sans garantie de disponibilité ni de conservation des
+				données. Il peut être modifié, interrompu ou réinitialisé à tout moment par
+				l'administration.</p>
+
+			<h2 id="compte">2. Compte et accès</h2>
+			<ul>
+				<li>La création d'un compte est soumise à <b>validation manuelle par un haut gradé</b>.
+					Aucune demande n'est acceptée automatiquement, et aucun délai de traitement n'est
+					garanti.</li>
+				<li>Une demande peut être refusée ou un compte suspendu sans justification, notamment en
+					cas de non-respect des présentes conditions.</li>
+				<li>Vous êtes responsable de la sécurité du compte (mot de passe ou compte Google) qui
+					vous sert à vous connecter, et de toute action effectuée depuis votre dossier.</li>
+				<li>Un seul compte par personne. Les comptes multiples, le partage d'accès et l'usurpation
+					d'identité d'un autre joueur sont interdits.</li>
+				<li>Les niveaux d'habilitation (invité, chercheur, membre, haut gradé)
+					sont attribués et révoqués à la discrétion du commandement.</li>
+			</ul>
+
+			<h2 id="donnees">3. Données que nous collectons</h2>
+			<p>À l'inscription, il vous est demandé :</p>
+			<ul>
+				<li>un <b>identifiant de service</b>&nbsp;;</li>
+				<li data-local-only>un <b>mot de passe</b> (stocké sous forme hachée, jamais en clair)&nbsp;;</li>
+				<li data-remote-only>la <b>connexion avec votre compte Google</b>&nbsp;: le portail reçoit
+					uniquement votre adresse e-mail Google et un identifiant technique, jamais votre mot de
+					passe&nbsp;;</li>
+				<li>votre <b>nom de service (nom RP)</b>, affiché aux autres membres&nbsp;;</li>
+				<li>votre <b>pseudo Discord</b>, déclaré par vous, pour vous joindre sur le serveur du jeu
+					et vérifier votre présence (aucune connexion à Discord n'est établie)&nbsp;;</li>
+				<li data-local-only>votre <b>adresse Google</b>, utilisée comme moyen de récupération et de
+					vérification d'unicité du compte&nbsp;;</li>
+				<li>éventuellement une courte <b>motivation</b> lue par le haut gradé qui traite la demande.</li>
+			</ul>
+			<p>Ces informations ne sont visibles que par les hauts gradés et l'administration. Elles ne
+				sont ni revendues, ni transmises à un tiers, ni utilisées à des fins publicitaires.</p>
+			<p><b>N'indiquez aucune donnée personnelle sensible</b> (adresse postale, pièce d'identité,
+				coordonnées bancaires, données de santé). Aucun membre de l'administration ne vous en
+				demandera jamais.</p>
+
+			<h3>Stockage</h3>
+			<p data-local-only>Dans cette version de démonstration, l'ensemble des données est stocké
+				<b>localement dans votre navigateur</b> (localStorage et cookies). Elles ne quittent pas
+				votre machine. Vider les données de site de votre navigateur efface définitivement votre
+				compte et votre progression.</p>
+			<p data-remote-only>Les dossiers et la progression sont hébergés chez <b>Google Cloud /
+				Firebase</b> (authentification Google, base de données Firestore, fonctions serveur), en région
+				Europe. Toutes les actions (versements de PR, lancements, validations) sont vérifiées et
+				enregistrées par le serveur&nbsp;; votre navigateur n'en garde qu'une copie d'affichage.</p>
+
+			<h3>Vos droits</h3>
+			<p>Vous pouvez à tout moment demander la consultation, la rectification ou la suppression de
+				votre compte auprès de l'administration. La suppression est définitive et entraîne la
+				perte des PR non dépensés. Les contributions déjà versées dans une recherche restent
+				acquises à la division.</p>
+
+			<h2 id="cookies">4. Cookies</h2>
+			<p>Ce site n'utilise <b>aucun cookie publicitaire, aucun traceur tiers, aucune mesure
+				d'audience externe</b>. Trois catégories seulement sont employées :</p>
+
+			<div class="table-wrap">
+				<table>
+					<thead>
+						<tr><th>Catégorie</th><th>Nom</th><th>Rôle</th><th>Durée</th><th>Consentement</th></tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Essentiel</td>
+							<td class="mono">goc_session</td>
+							<td>Maintient votre session ouverte pendant la visite.</td>
+							<td>Fin de session (24 h)</td>
+							<td>Non requis</td>
+						</tr>
+						<tr>
+							<td>Essentiel</td>
+							<td class="mono">goc_consent</td>
+							<td>Mémorise vos choix de cookies pour ne plus vous les redemander.</td>
+							<td>6 mois</td>
+							<td>Non requis</td>
+						</tr>
+						<tr>
+							<td>Connexion enregistrée</td>
+							<td class="mono">goc_session</td>
+							<td>Prolonge la session si vous cochez « Rester connecté », pour éviter de
+								ressaisir vos identifiants. Avec la connexion Google, la session est
+								conservée par Firebase Authentication dans le stockage du navigateur.</td>
+							<td>30 jours</td>
+							<td><b>Requis</b></td>
+						</tr>
+						<tr>
+							<td>Préférences</td>
+							<td class="mono">pref::*</td>
+							<td>Retient vos filtres, onglets et options d'affichage.</td>
+							<td>Jusqu'à effacement</td>
+							<td><b>Requis</b></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<p style="margin-top:1.2rem">Refuser les catégories facultatives n'empêche pas d'utiliser le
+				site&nbsp;: seule la case « Rester connecté » devient inopérante, et vos préférences
+				d'affichage ne sont plus mémorisées.</p>
+
+			<p>
+				<button class="btn btn-ghost" type="button" data-cookie-settings>Modifier mes choix de cookies</button>
+				<button class="btn btn-danger" type="button" id="cgu-purge" style="margin-left:.5rem">Supprimer mes cookies et me déconnecter</button>
+			</p>
+			<p id="cgu-state" class="dim"></p>
+
+			<h2 id="regles">5. Règles de conduite</h2>
+			<p>Sont interdits, et sanctionnés par la suspension immédiate du compte :</p>
+			<ul>
+				<li>le harcèlement, les insultes, les propos haineux, discriminatoires ou menaçants&nbsp;;</li>
+				<li>les contenus sexuels, gore gratuits ou manifestement inadaptés à un public mixte&nbsp;;</li>
+				<li>la publication de données personnelles d'autrui (<i>doxxing</i>), y compris en jeu&nbsp;;</li>
+				<li>l'usurpation d'un rôle, d'un grade ou d'une identité que vous n'avez pas&nbsp;;</li>
+				<li>l'exploitation volontaire d'un bug, la manipulation des données du navigateur pour
+					s'attribuer des PR, des grades ou des recherches&nbsp;;</li>
+				<li>toute tentative d'atteinte au fonctionnement du site ou aux comptes d'autrui.</li>
+			</ul>
+			<p>La distinction entre le jeu de rôle et la réalité doit rester claire en toutes
+				circonstances. Un propos tenu « en RP » n'excuse pas un comportement abusif envers une
+				personne réelle.</p>
+
+			<h2 id="contenu">6. Contenus publiés</h2>
+			<p>Vous restez propriétaire des textes que vous rédigez. En les publiant ici, vous accordez à
+				l'administration le droit non exclusif de les afficher, de les corriger et de les
+				archiver dans le cadre du jeu.</p>
+			<p>N'utilisez que des images dont vous disposez des droits. Les illustrations de recherche
+				fournies par URL restent hébergées chez leur fournisseur d'origine&nbsp;; le site ne fait
+				que les afficher.</p>
+			<p>L'univers SCP et ses dérivés sont diffusés sous licence <b>CC BY-SA 3.0</b>. Les contenus
+				d'univers de ce site suivent la même licence.</p>
+
+			<h2 id="age">7. Âge minimum</h2>
+			<p>Le service s'adresse aux personnes de <b>13 ans ou plus</b>. Si la législation de votre
+				pays fixe un âge supérieur pour consentir au traitement de données en ligne, cet âge
+				s'applique.</p>
+
+			<h2 id="responsabilite">8. Responsabilité</h2>
+			<p>Le site est fourni « en l'état ». L'administration ne peut être tenue responsable d'une
+				perte de données, d'une indisponibilité, d'un effacement de progression ou de tout
+				dommage indirect lié à l'utilisation du service.</p>
+
+			<h2 id="modifications">9. Modification des conditions</h2>
+			<p>Ces conditions peuvent évoluer. Toute modification substantielle sera annoncée sur le
+				portail et sur le Discord du projet. Continuer à utiliser le site après une modification
+				vaut acceptation de la nouvelle version.</p>
+
+			<h2 id="contact">10. Contact</h2>
+			<p>Pour toute question, réclamation ou demande de suppression de compte, adressez-vous à
+				l'administration via le serveur Discord du projet, ou à un haut gradé du portail.</p>
+		</div>
+	</main>
+
+	<footer class="site-footer" data-footer></footer>
+
+	<script src="js/firebase-config.js"></script>
+	<script src="js/core.js"></script>
+	<script src="js/icons.js"></script>
+	<script src="js/ops.js"></script>
+	<script src="js/remote.js"></script>
+	<script>
+		GOC.ready(function () {
+		GOC.UI.boot();
+		document.getElementById('cgu-date').textContent =
+			new Date(GOC.Store.load().createdAt).toLocaleDateString('fr-FR');
+
+		document.querySelectorAll('[data-cookie-settings]').forEach(function (b) {
+			b.addEventListener('click', function (e) { e.preventDefault(); GOC.UI.cookieBanner(true); });
+		});
+
+		document.getElementById('cgu-purge').addEventListener('click', function () {
+			GOC.Consent.reset();
+			GOC.Auth.logout(function () {
+				GOC.UI.toast('Cookies supprimés, session fermée.', 'ok');
+				setTimeout(function () { location.reload(); }, 700);
+			});
+		});
+
+		(function () {
+			var c = GOC.Consent.read();
+			var el = document.getElementById('cgu-state');
+			el.textContent = c
+				? 'Choix enregistré le ' + new Date(c.date).toLocaleString('fr-FR') +
+				  ' — connexion enregistrée : ' + (c.persistance ? 'autorisée' : 'refusée') +
+				  ' · préférences : ' + (c.preferences ? 'autorisées' : 'refusées') + '.'
+				: 'Aucun choix de cookies enregistré pour le moment.';
+		})();
+		});
+	</script>
+</body>
+</html>

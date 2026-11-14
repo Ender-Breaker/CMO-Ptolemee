@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Laboratoire PTOLÉMÉE — arbre de recherche, financement et lancement des travaux.">
+	<title>Laboratoire · PTOLÉMÉE</title>
+	<link rel="icon" href="assets/ptolemee-bleu.png">
+	<link rel="stylesheet" href="style.css">
+	<script>(function(){try{var t=localStorage.getItem('pref::theme');if(t==='sombre'||t==='clair')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+</head>
+<body>
+	<header class="site-header" data-header></header>
+
+	<main>
+		<div class="wrap page-head">
+			<span class="eyebrow">Accès chercheur</span>
+			<h1>Laboratoire</h1>
+			<p>L'arbre de recherche de la division. Sélectionnez un point pour verser vos PR ou lancer
+				les travaux. Toute action est journalisée.</p>
+		</div>
+
+		<div class="wrap">
+			<div data-announcements></div>
+			<div class="lab-bar" data-bar></div>
+			<div data-events></div>
+
+			<div data-tree="chercheur"></div>
+		</div>
+	</main>
+
+	<footer class="site-footer" data-footer></footer>
+
+	<script src="js/firebase-config.js"></script>
+	<script src="js/core.js"></script>
+	<script src="js/icons.js"></script>
+	<script src="js/research.js"></script>
+	<script src="js/graph.js"></script>
+	<script src="js/ops.js"></script>
+	<script src="js/remote.js"></script>
+	<script>
+		GOC.ready(function () {
+			if (!GOC.Auth.require('chercheur')) {
+				document.querySelector('[data-tree]').removeAttribute('data-tree');
+			}
+			GOC.UI.boot();
+		});
+	</script>
+	<script src="js/page-tree.js"></script>
+</body>
+</html>
